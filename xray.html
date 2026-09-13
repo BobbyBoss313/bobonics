@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="theme-color" content="#030817"/><meta name="description" content="Start a BOBONICS Business X-Ray to identify workflow bottlenecks, automation opportunities, and systems that should work better together."/><link rel="canonical" href="https://bobonics.com/xray.html"/><title>Business X-Ray | BOBONICS Business Solutions</title><link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml"/><link rel="stylesheet" href="/styles.css"/></head><body>
+  <div class="nav-wrap">
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="BOBONICS Business Solutions home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-copy"><strong>BOBONICS</strong><small>Business Solutions</small></span>
+        </a>
+        <div class="button-row"><a class="btn btn-ghost" href="/">HOME</a><a class="btn btn-primary" href="tel:+13348910009">CALL BOBONICS</a></div>
+      </nav>
+    </div>
+  </div>
+  <main>
+    <section class="page-hero">
+      <div class="container"><div class="eyebrow">BOBONICS Business X-Ray</div><h1>SHOW US WHERE<br><span class="gradient-text">THE BUSINESS HURTS.</span></h1><p class="lead">You do not need to know what software or AI you need. Tell us what is slow, repetitive, confusing, or falling through the cracks. We start with the business problem.</p></div>
+    </section>
+    <section class="section section-tight">
+      <div class="container form-shell">
+        <div>
+          <div class="eyebrow">How it works</div>
+          <h2>FROM BOTTLENECK<br><span class="gradient-text">TO BLUEPRINT.</span></h2>
+          <p class="lead">The first conversation is about your operation—not selling you a pile of apps.</p>
+          <div class="xray-steps">
+            <div class="xray-step"><strong>01 / Tell us what is happening.</strong><span class="muted">Where work comes in, who touches it, and what keeps getting delayed.</span></div>
+            <div class="xray-step"><strong>02 / We map the flow.</strong><span class="muted">People, software, calls, email, scheduling, sales, customers, and handoffs.</span></div>
+            <div class="xray-step"><strong>03 / We identify the leverage.</strong><span class="muted">Simplify first. Connect what already works. Automate repetition. Build only where needed.</span></div>
+            <div class="xray-step"><strong>04 / You get a clear next move.</strong><span class="muted">No mystery stack. No technology for technology's sake.</span></div>
+          </div>
+        </div>
+        <div class="form-panel glass">
+          <div class="eyebrow">Start your X-Ray</div>
+          <h3>Tell BOBONICS about your business.</h3>
+          <form id="xrayForm">
+            <div class="form-grid">
+              <div class="field"><label for="name">Your name *</label><input id="name" name="name" required autocomplete="name"/></div>
+              <div class="field"><label for="company">Company *</label><input id="company" name="company" required autocomplete="organization"/></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"/></div>
+              <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"/></div>
+              <div class="field full"><label for="problem">What is the biggest problem or bottleneck right now? *</label><textarea id="problem" name="problem" required placeholder="Example: leads come from Facebook, email and phone, but nobody has one place to track them..."></textarea></div>
+              <div class="field"><label for="team">Approximate team size</label><select id="team" name="team"><option value="">Select</option><option>1-5</option><option>6-15</option><option>16-50</option><option>51+</option></select></div>
+              <div class="field"><label for="priority">Where do you want help first?</label><select id="priority" name="priority"><option value="">Not sure yet</option><option>Office workflow</option><option>Sales & follow-up</option><option>Phone / customer communication</option><option>Scheduling</option><option>Website / lead capture</option><option>AI automation</option><option>Custom software</option><option>Something else</option></select></div>
+              <div class="field full"><label for="tools">What tools/software do you already use?</label><textarea id="tools" name="tools" placeholder="QuickBooks, Housecall Pro, Gmail, spreadsheets, CRM, etc."></textarea></div>
+            </div>
+            <div class="button-row" style="margin-top:20px"><button class="btn btn-primary" type="submit">SEND MY BUSINESS X-RAY</button><a class="btn btn-ghost" href="tel:+13348910009">CALL 334-891-0009</a></div>
+            <p class="form-help">Version 1 securely uses your device's email app to send the intake directly to BOBONICS. We can add a database-backed intake system next.</p>
+            <div class="notice" id="xrayNotice" role="status">Your email app should open with your Business X-Ray already filled in.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-copy"><strong>BOBONICS</strong><small>Business Solutions</small></span></div>
+        <div class="footer-copy">Your business, enhanced. · Human-led systems, automation, software, and AI.</div>
+      </div>
+      <div class="footer-links"><a href="tel:+13348910009">334-891-0009</a><a href="mailto:bobbycopley@icloud.com">bobbycopley@icloud.com</a><div class="footer-legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div>
+    </div>
+  </footer>
+<script>
+(() => {
+  const form = document.getElementById('xrayForm');
+  const notice = document.getElementById('xrayNotice');
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    const lines = [
+      'BOBONICS BUSINESS X-RAY', '',
+      `Name: ${data.get('name') || ''}`,
+      `Company: ${data.get('company') || ''}`,
+      `Phone: ${data.get('phone') || ''}`,
+      `Email: ${data.get('email') || ''}`,
+      `Team size: ${data.get('team') || ''}`,
+      `Priority: ${data.get('priority') || 'Not sure yet'}`, '',
+      'BIGGEST PROBLEM / BOTTLENECK:', data.get('problem') || '', '',
+      'CURRENT TOOLS / SOFTWARE:', data.get('tools') || ''
+    ];
+    const subject = `BOBONICS Business X-Ray — ${data.get('company') || data.get('name') || 'New Lead'}`;
+    notice.style.display = 'block';
+    window.location.href = `mailto:bobbycopley@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+  });
+})();
+</script></body></html>
