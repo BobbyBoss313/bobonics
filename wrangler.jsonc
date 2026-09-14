@@ -5,5 +5,15 @@
   "assets": {
     "directory": ".",
     "not_found_handling": "404-page"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "bobonics.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.bobonics.com",
+      "custom_domain": true
+    }
+  ]
 }
